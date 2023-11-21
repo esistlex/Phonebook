@@ -1,0 +1,60 @@
+using MySql.Data.MySqlClient;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace phonebook1
+{
+    public partial class PhonebookForm : Form
+    {
+        private MySqlConnection connection;
+        private MySqlCommand command;
+        private MySqlDataAdapter adapter;
+        private MySqlDataReader reader;
+        private DataTable dataTable;
+        public PhonebookForm()
+        {
+            InitializeComponent();
+        }
+
+        private void load(object sender, EventArgs e)
+        {
+            try
+            {               
+                string connectionString = "server=localhost;user id=root;database=phonebook";
+                connection = new MySqlConnection(connectionString);
+                connection.Open();
+
+                string query = "SELECT * FROM contactlist";
+                command = new MySqlCommand(query,connection);
+                reader = command.ExecuteReader();
+
+                while(reader.Read()) {
+
+                    string column1Value = reader["USERID"].ToString();
+                    string column2Value = reader["USER_NAME"].ToString();
+                    string column3Value = reader["USER_ADDRESS"].ToString();
+                    string column4Value = reader["USER_STATE"].ToString();
+                    string column5Value = reader["USER_ZIPCODE"].ToString();
+                    string column6Value = reader["USER_COUNTRY"].ToString();
+
+                    DataGridViewRow row = new DataGridViewRow();
+                    row.CreateCells(dataGridView1, column1Value, column2Value, column3Value, column4Value, column5Value, column6Value);
+                    dataGridView1.Rows.Add(row);
+                }
+
+                connection.Close();
+
+            } catch (MySqlException err)
+            {
+                MessageBox.Show(err.Message);
+            }
+        }
+    }
+}
