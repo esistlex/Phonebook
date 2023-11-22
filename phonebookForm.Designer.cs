@@ -1,6 +1,6 @@
 ﻿using System.Windows.Forms;
 
-namespace phonebook1
+namespace phonebook
 {
     partial class PhonebookForm
     {
@@ -30,298 +30,352 @@ namespace phonebook1
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.ID_COLUMN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NAME_COLUMN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ADDRESS_COLUMN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PROVINCE_COLUMN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ZIPCODE_COLUMN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.COUNTRY_COLUMN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label1 = new System.Windows.Forms.Label();
-            this.nameTxtbox = new System.Windows.Forms.TextBox();
-            this.addressTxtbox = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.provinceTxtbox = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.zipcodeTxtbox = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.countryTxtbox = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.idTxtbox = new System.Windows.Forms.TextBox();
-            this.addBtn = new System.Windows.Forms.Button();
-            this.deleteBtn = new System.Windows.Forms.Button();
-            this.updateBtn = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.groupBox1.SuspendLayout();
-            this.SuspendLayout();
+            dataGridView1 = new DataGridView();
+            ID_COLUMN = new DataGridViewTextBoxColumn();
+            NAME_COLUMN = new DataGridViewTextBoxColumn();
+            CONTACTNO_COLUMN = new DataGridViewTextBoxColumn();
+            PROVINCE_COLUMN = new DataGridViewTextBoxColumn();
+            ZIPCODE_COLUMN = new DataGridViewTextBoxColumn();
+            label1 = new Label();
+            nameTxtbox = new TextBox();
+            provinceTxtbox = new TextBox();
+            label3 = new Label();
+            zipcodeTxtbox = new TextBox();
+            label4 = new Label();
+            groupBox1 = new GroupBox();
+            refreshBtn = new Button();
+            label6 = new Label();
+            label7 = new Label();
+            idTxtbox = new TextBox();
+            contactTxtbox = new TextBox();
+            addBtn = new Button();
+            updateBtn = new Button();
+            deleteBtn = new Button();
+            label8 = new Label();
+            searchbox = new TextBox();
+            searchBtn = new Button();
+            comboBox1 = new ComboBox();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            groupBox1.SuspendLayout();
+            SuspendLayout();
             // 
             // dataGridView1
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AllowUserToResizeColumns = false;
-            this.dataGridView1.AllowUserToResizeRows = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ID_COLUMN,
-            this.NAME_COLUMN,
-            this.ADDRESS_COLUMN,
-            this.PROVINCE_COLUMN,
-            this.ZIPCODE_COLUMN,
-            this.COUNTRY_COLUMN});
-            this.dataGridView1.Location = new System.Drawing.Point(12, 12);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(771, 294);
-            this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            dataGridView1.AllowUserToAddRows = false;
+            dataGridView1.AllowUserToDeleteRows = false;
+            dataGridView1.AllowUserToResizeColumns = false;
+            dataGridView1.AllowUserToResizeRows = false;
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { ID_COLUMN, NAME_COLUMN, CONTACTNO_COLUMN, PROVINCE_COLUMN, ZIPCODE_COLUMN });
+            dataGridView1.Location = new Point(13, 14);
+            dataGridView1.Margin = new Padding(4, 3, 4, 3);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.ReadOnly = true;
+            dataGridView1.RowHeadersVisible = false;
+            dataGridView1.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridView1.Size = new Size(715, 449);
+            dataGridView1.TabIndex = 0;
+            dataGridView1.CellClick += dataGridView1_CellClick;
             // 
             // ID_COLUMN
             // 
-            this.ID_COLUMN.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.ID_COLUMN.HeaderText = "ID";
-            this.ID_COLUMN.Name = "ID_COLUMN";
-            this.ID_COLUMN.ReadOnly = true;
-            this.ID_COLUMN.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.ID_COLUMN.Width = 43;
+            ID_COLUMN.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            ID_COLUMN.HeaderText = "ID";
+            ID_COLUMN.Name = "ID_COLUMN";
+            ID_COLUMN.ReadOnly = true;
+            ID_COLUMN.Resizable = DataGridViewTriState.False;
+            ID_COLUMN.Width = 43;
             // 
             // NAME_COLUMN
             // 
-            this.NAME_COLUMN.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.NAME_COLUMN.HeaderText = "NAME";
-            this.NAME_COLUMN.Name = "NAME_COLUMN";
-            this.NAME_COLUMN.ReadOnly = true;
-            this.NAME_COLUMN.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            NAME_COLUMN.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            NAME_COLUMN.HeaderText = "NAME";
+            NAME_COLUMN.Name = "NAME_COLUMN";
+            NAME_COLUMN.ReadOnly = true;
+            NAME_COLUMN.Resizable = DataGridViewTriState.False;
             // 
-            // ADDRESS_COLUMN
+            // CONTACTNO_COLUMN
             // 
-            this.ADDRESS_COLUMN.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ADDRESS_COLUMN.HeaderText = "ADDRESS";
-            this.ADDRESS_COLUMN.Name = "ADDRESS_COLUMN";
-            this.ADDRESS_COLUMN.ReadOnly = true;
-            this.ADDRESS_COLUMN.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            CONTACTNO_COLUMN.HeaderText = "CONTACT NO.";
+            CONTACTNO_COLUMN.Name = "CONTACTNO_COLUMN";
+            CONTACTNO_COLUMN.ReadOnly = true;
+            CONTACTNO_COLUMN.Resizable = DataGridViewTriState.False;
+            CONTACTNO_COLUMN.Width = 109;
             // 
             // PROVINCE_COLUMN
             // 
-            this.PROVINCE_COLUMN.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.PROVINCE_COLUMN.HeaderText = "PROVINCE";
-            this.PROVINCE_COLUMN.Name = "PROVINCE_COLUMN";
-            this.PROVINCE_COLUMN.ReadOnly = true;
-            this.PROVINCE_COLUMN.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            PROVINCE_COLUMN.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            PROVINCE_COLUMN.HeaderText = "PROVINCE";
+            PROVINCE_COLUMN.Name = "PROVINCE_COLUMN";
+            PROVINCE_COLUMN.ReadOnly = true;
+            PROVINCE_COLUMN.Resizable = DataGridViewTriState.False;
             // 
             // ZIPCODE_COLUMN
             // 
-            this.ZIPCODE_COLUMN.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ZIPCODE_COLUMN.HeaderText = "ZIP CODE";
-            this.ZIPCODE_COLUMN.Name = "ZIPCODE_COLUMN";
-            this.ZIPCODE_COLUMN.ReadOnly = true;
-            this.ZIPCODE_COLUMN.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // COUNTRY_COLUMN
-            // 
-            this.COUNTRY_COLUMN.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.COUNTRY_COLUMN.HeaderText = "COUNTRY";
-            this.COUNTRY_COLUMN.Name = "COUNTRY_COLUMN";
-            this.COUNTRY_COLUMN.ReadOnly = true;
-            this.COUNTRY_COLUMN.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            ZIPCODE_COLUMN.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            ZIPCODE_COLUMN.HeaderText = "ZIP CODE";
+            ZIPCODE_COLUMN.Name = "ZIPCODE_COLUMN";
+            ZIPCODE_COLUMN.ReadOnly = true;
+            ZIPCODE_COLUMN.Resizable = DataGridViewTriState.False;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(6, 74);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(55, 20);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Name:";
+            label1.AutoSize = true;
+            label1.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Location = new Point(23, 92);
+            label1.Margin = new Padding(4, 0, 4, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(55, 20);
+            label1.TabIndex = 1;
+            label1.Text = "Name:";
             // 
             // nameTxtbox
             // 
-            this.nameTxtbox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.nameTxtbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nameTxtbox.Location = new System.Drawing.Point(92, 74);
-            this.nameTxtbox.Name = "nameTxtbox";
-            this.nameTxtbox.Size = new System.Drawing.Size(289, 22);
-            this.nameTxtbox.TabIndex = 2;
-            // 
-            // addressTxtbox
-            // 
-            this.addressTxtbox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.addressTxtbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addressTxtbox.Location = new System.Drawing.Point(92, 124);
-            this.addressTxtbox.Name = "addressTxtbox";
-            this.addressTxtbox.Size = new System.Drawing.Size(289, 22);
-            this.addressTxtbox.TabIndex = 4;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(6, 123);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(72, 20);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Address:";
+            nameTxtbox.BorderStyle = BorderStyle.FixedSingle;
+            nameTxtbox.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            nameTxtbox.Location = new Point(140, 94);
+            nameTxtbox.Margin = new Padding(4, 3, 4, 3);
+            nameTxtbox.Name = "nameTxtbox";
+            nameTxtbox.Size = new Size(337, 22);
+            nameTxtbox.TabIndex = 2;
             // 
             // provinceTxtbox
             // 
-            this.provinceTxtbox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.provinceTxtbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.provinceTxtbox.Location = new System.Drawing.Point(92, 175);
-            this.provinceTxtbox.Name = "provinceTxtbox";
-            this.provinceTxtbox.Size = new System.Drawing.Size(289, 22);
-            this.provinceTxtbox.TabIndex = 6;
+            provinceTxtbox.BorderStyle = BorderStyle.FixedSingle;
+            provinceTxtbox.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            provinceTxtbox.Location = new Point(140, 215);
+            provinceTxtbox.Margin = new Padding(4, 3, 4, 3);
+            provinceTxtbox.Name = "provinceTxtbox";
+            provinceTxtbox.Size = new Size(337, 22);
+            provinceTxtbox.TabIndex = 6;
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(6, 177);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(73, 20);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Province:";
+            label3.AutoSize = true;
+            label3.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.Location = new Point(23, 217);
+            label3.Margin = new Padding(4, 0, 4, 0);
+            label3.Name = "label3";
+            label3.Size = new Size(73, 20);
+            label3.TabIndex = 5;
+            label3.Text = "Province:";
             // 
             // zipcodeTxtbox
             // 
-            this.zipcodeTxtbox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.zipcodeTxtbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.zipcodeTxtbox.Location = new System.Drawing.Point(92, 225);
-            this.zipcodeTxtbox.Name = "zipcodeTxtbox";
-            this.zipcodeTxtbox.Size = new System.Drawing.Size(289, 22);
-            this.zipcodeTxtbox.TabIndex = 8;
+            zipcodeTxtbox.BorderStyle = BorderStyle.FixedSingle;
+            zipcodeTxtbox.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            zipcodeTxtbox.Location = new Point(140, 280);
+            zipcodeTxtbox.Margin = new Padding(4, 3, 4, 3);
+            zipcodeTxtbox.Name = "zipcodeTxtbox";
+            zipcodeTxtbox.Size = new Size(337, 22);
+            zipcodeTxtbox.TabIndex = 8;
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(9, 225);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(77, 20);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Zip Code:";
-            // 
-            // countryTxtbox
-            // 
-            this.countryTxtbox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.countryTxtbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.countryTxtbox.Location = new System.Drawing.Point(91, 273);
-            this.countryTxtbox.Name = "countryTxtbox";
-            this.countryTxtbox.Size = new System.Drawing.Size(289, 22);
-            this.countryTxtbox.TabIndex = 10;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(8, 273);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(68, 20);
-            this.label5.TabIndex = 9;
-            this.label5.Text = "Country:";
+            label4.AutoSize = true;
+            label4.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label4.Location = new Point(23, 278);
+            label4.Margin = new Padding(4, 0, 4, 0);
+            label4.Name = "label4";
+            label4.Size = new Size(77, 20);
+            label4.TabIndex = 7;
+            label4.Text = "Zip Code:";
             // 
             // groupBox1
             // 
-            this.groupBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.idTxtbox);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.countryTxtbox);
-            this.groupBox1.Controls.Add(this.nameTxtbox);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.zipcodeTxtbox);
-            this.groupBox1.Controls.Add(this.addressTxtbox);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.provinceTxtbox);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(12, 312);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(435, 314);
-            this.groupBox1.TabIndex = 11;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Info";
+            groupBox1.BackColor = SystemColors.Control;
+            groupBox1.BackgroundImageLayout = ImageLayout.None;
+            groupBox1.Controls.Add(refreshBtn);
+            groupBox1.Controls.Add(label1);
+            groupBox1.Controls.Add(label3);
+            groupBox1.Controls.Add(label4);
+            groupBox1.Controls.Add(label6);
+            groupBox1.Controls.Add(label7);
+            groupBox1.Controls.Add(idTxtbox);
+            groupBox1.Controls.Add(nameTxtbox);
+            groupBox1.Controls.Add(contactTxtbox);
+            groupBox1.Controls.Add(provinceTxtbox);
+            groupBox1.Controls.Add(zipcodeTxtbox);
+            groupBox1.Controls.Add(addBtn);
+            groupBox1.Controls.Add(updateBtn);
+            groupBox1.Controls.Add(deleteBtn);
+            groupBox1.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            groupBox1.Location = new Point(735, 62);
+            groupBox1.Margin = new Padding(4, 3, 4, 3);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Padding = new Padding(4, 3, 4, 3);
+            groupBox1.Size = new Size(508, 401);
+            groupBox1.TabIndex = 11;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "Info";
+            // 
+            // refreshBtn
+            // 
+            refreshBtn.Cursor = Cursors.Hand;
+            refreshBtn.FlatStyle = FlatStyle.Flat;
+            refreshBtn.Location = new Point(140, 342);
+            refreshBtn.Margin = new Padding(4, 3, 4, 3);
+            refreshBtn.Name = "refreshBtn";
+            refreshBtn.Size = new Size(98, 38);
+            refreshBtn.TabIndex = 15;
+            refreshBtn.Text = "REFRESH";
+            refreshBtn.UseVisualStyleBackColor = true;
+            refreshBtn.Click += refreshBtnClick;
             // 
             // label6
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(9, 28);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(30, 20);
-            this.label6.TabIndex = 11;
-            this.label6.Text = "ID:";
+            label6.AutoSize = true;
+            label6.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label6.Location = new Point(23, 38);
+            label6.Margin = new Padding(4, 0, 4, 0);
+            label6.Name = "label6";
+            label6.Size = new Size(30, 20);
+            label6.TabIndex = 11;
+            label6.Text = "ID:";
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label7.Location = new Point(18, 157);
+            label7.Margin = new Padding(4, 0, 4, 0);
+            label7.Name = "label7";
+            label7.Size = new Size(97, 20);
+            label7.TabIndex = 13;
+            label7.Text = "Contact No.:";
             // 
             // idTxtbox
             // 
-            this.idTxtbox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.idTxtbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.idTxtbox.Location = new System.Drawing.Point(91, 29);
-            this.idTxtbox.Name = "idTxtbox";
-            this.idTxtbox.ReadOnly = true;
-            this.idTxtbox.Size = new System.Drawing.Size(60, 22);
-            this.idTxtbox.TabIndex = 12;
+            idTxtbox.BorderStyle = BorderStyle.FixedSingle;
+            idTxtbox.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            idTxtbox.Location = new Point(140, 36);
+            idTxtbox.Margin = new Padding(4, 3, 4, 3);
+            idTxtbox.Name = "idTxtbox";
+            idTxtbox.ReadOnly = true;
+            idTxtbox.Size = new Size(70, 22);
+            idTxtbox.TabIndex = 12;
+            // 
+            // contactTxtbox
+            // 
+            contactTxtbox.BorderStyle = BorderStyle.FixedSingle;
+            contactTxtbox.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            contactTxtbox.Location = new Point(138, 157);
+            contactTxtbox.Margin = new Padding(4, 3, 4, 3);
+            contactTxtbox.Name = "contactTxtbox";
+            contactTxtbox.Size = new Size(337, 22);
+            contactTxtbox.TabIndex = 14;
             // 
             // addBtn
             // 
-            this.addBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.addBtn.Location = new System.Drawing.Point(475, 327);
-            this.addBtn.Name = "addBtn";
-            this.addBtn.Size = new System.Drawing.Size(84, 33);
-            this.addBtn.TabIndex = 11;
-            this.addBtn.Text = "ADD";
-            this.addBtn.UseVisualStyleBackColor = true;
-            this.addBtn.Click += new System.EventHandler(this.addBtnClick);
-            // 
-            // deleteBtn
-            // 
-            this.deleteBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.deleteBtn.Location = new System.Drawing.Point(475, 395);
-            this.deleteBtn.Name = "deleteBtn";
-            this.deleteBtn.Size = new System.Drawing.Size(84, 33);
-            this.deleteBtn.TabIndex = 12;
-            this.deleteBtn.Text = "DELETE";
-            this.deleteBtn.UseVisualStyleBackColor = true;
-            this.deleteBtn.Click += new System.EventHandler(this.deleteBtnClick);
+            addBtn.Cursor = Cursors.Hand;
+            addBtn.FlatStyle = FlatStyle.Flat;
+            addBtn.Location = new Point(24, 342);
+            addBtn.Margin = new Padding(4, 3, 4, 3);
+            addBtn.Name = "addBtn";
+            addBtn.Size = new Size(98, 38);
+            addBtn.TabIndex = 11;
+            addBtn.Text = "ADD";
+            addBtn.UseVisualStyleBackColor = true;
+            addBtn.Click += addBtnClick;
             // 
             // updateBtn
             // 
-            this.updateBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.updateBtn.Location = new System.Drawing.Point(475, 460);
-            this.updateBtn.Name = "updateBtn";
-            this.updateBtn.Size = new System.Drawing.Size(84, 33);
-            this.updateBtn.TabIndex = 13;
-            this.updateBtn.Text = "UPDATE";
-            this.updateBtn.UseVisualStyleBackColor = true;
-            this.updateBtn.Click += new System.EventHandler(this.updateBtnClick);
+            updateBtn.Cursor = Cursors.Hand;
+            updateBtn.FlatStyle = FlatStyle.Flat;
+            updateBtn.Location = new Point(260, 342);
+            updateBtn.Margin = new Padding(4, 3, 4, 3);
+            updateBtn.Name = "updateBtn";
+            updateBtn.Size = new Size(98, 38);
+            updateBtn.TabIndex = 13;
+            updateBtn.Text = "UPDATE";
+            updateBtn.UseVisualStyleBackColor = true;
+            updateBtn.Click += updateBtnClick;
+            // 
+            // deleteBtn
+            // 
+            deleteBtn.Cursor = Cursors.Hand;
+            deleteBtn.FlatStyle = FlatStyle.Flat;
+            deleteBtn.Location = new Point(379, 342);
+            deleteBtn.Margin = new Padding(4, 3, 4, 3);
+            deleteBtn.Name = "deleteBtn";
+            deleteBtn.Size = new Size(98, 38);
+            deleteBtn.TabIndex = 12;
+            deleteBtn.Text = "DELETE";
+            deleteBtn.UseVisualStyleBackColor = true;
+            deleteBtn.Click += deleteBtnClick;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label8.Location = new Point(743, 22);
+            label8.Margin = new Padding(4, 0, 4, 0);
+            label8.Name = "label8";
+            label8.Size = new Size(40, 20);
+            label8.TabIndex = 14;
+            label8.Text = "Find";
+            // 
+            // searchbox
+            // 
+            searchbox.BorderStyle = BorderStyle.FixedSingle;
+            searchbox.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            searchbox.Location = new Point(932, 20);
+            searchbox.Margin = new Padding(4, 3, 4, 3);
+            searchbox.Name = "searchbox";
+            searchbox.Size = new Size(211, 26);
+            searchbox.TabIndex = 15;
+            // 
+            // searchBtn
+            // 
+            searchBtn.Cursor = Cursors.Hand;
+            searchBtn.FlatStyle = FlatStyle.Flat;
+            searchBtn.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
+            searchBtn.Location = new Point(1150, 19);
+            searchBtn.Margin = new Padding(4, 3, 4, 3);
+            searchBtn.Name = "searchBtn";
+            searchBtn.Size = new Size(88, 29);
+            searchBtn.TabIndex = 16;
+            searchBtn.Text = "SEARCH";
+            searchBtn.UseVisualStyleBackColor = true;
+            searchBtn.Click += searchBtnClick;
+            // 
+            // comboBox1
+            // 
+            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBox1.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Items.AddRange(new object[] { "Name", "Province" });
+            comboBox1.Location = new Point(790, 21);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(135, 25);
+            comboBox1.TabIndex = 16;
             // 
             // PhonebookForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(794, 638);
-            this.Controls.Add(this.updateBtn);
-            this.Controls.Add(this.deleteBtn);
-            this.Controls.Add(this.addBtn);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.dataGridView1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.MaximizeBox = false;
-            this.Name = "PhonebookForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.White;
+            ClientSize = new Size(1256, 474);
+            Controls.Add(comboBox1);
+            Controls.Add(searchBtn);
+            Controls.Add(searchbox);
+            Controls.Add(label8);
+            Controls.Add(groupBox1);
+            Controls.Add(dataGridView1);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            Margin = new Padding(4, 3, 4, 3);
+            MaximizeBox = false;
+            Name = "PhonebookForm";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Phonebook";
+            Activated += PhonebookForm_Activated;
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -329,26 +383,28 @@ namespace phonebook1
         private System.Windows.Forms.DataGridView dataGridView1;
         private Label label1;
         private TextBox nameTxtbox;
-        private TextBox addressTxtbox;
-        private Label label2;
         private TextBox provinceTxtbox;
         private Label label3;
         private TextBox zipcodeTxtbox;
         private Label label4;
-        private TextBox countryTxtbox;
-        private Label label5;
         private GroupBox groupBox1;
         private Button addBtn;
-        private DataGridViewTextBoxColumn ID_COLUMN;
-        private DataGridViewTextBoxColumn NAME_COLUMN;
-        private DataGridViewTextBoxColumn ADDRESS_COLUMN;
-        private DataGridViewTextBoxColumn PROVINCE_COLUMN;
-        private DataGridViewTextBoxColumn ZIPCODE_COLUMN;
-        private DataGridViewTextBoxColumn COUNTRY_COLUMN;
         private Label label6;
         private TextBox idTxtbox;
         private Button deleteBtn;
         private Button updateBtn;
+        private TextBox contactTxtbox;
+        private Label label7;
+        private Label label8;
+        private TextBox searchbox;
+        private Button searchBtn;
+        private Button refreshBtn;
+        private DataGridViewTextBoxColumn ID_COLUMN;
+        private DataGridViewTextBoxColumn NAME_COLUMN;
+        private DataGridViewTextBoxColumn CONTACTNO_COLUMN;
+        private DataGridViewTextBoxColumn PROVINCE_COLUMN;
+        private DataGridViewTextBoxColumn ZIPCODE_COLUMN;
+        private ComboBox comboBox1;
     }
 }
 

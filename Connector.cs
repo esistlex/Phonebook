@@ -3,7 +3,7 @@ using System;
 using System.Windows.Forms;
 
 
-namespace phonebook1
+namespace phonebook
 {
     public class Connector : Form
     {
@@ -21,7 +21,6 @@ namespace phonebook1
         public void DoDisconnect()
         {
             connection.Close();
-            reader.Close();
             connection.Dispose();              
         }
 
@@ -30,7 +29,6 @@ namespace phonebook1
             MySqlCommand command = new MySqlCommand(query, connection);
             return command.ExecuteReader();
         }
-
 
     }
 }
